@@ -1,0 +1,7 @@
+SECRET_KEY = 'django-insecure-)@ja2!uuw)fs(8k1e@lk$4s92)#l$vjed^v$n@ykhj@hc(8@g#'
+DEBUG = False
+MYSQL_DBNAME = 'gbtestdjango2024$default'
+MYSQL_USER = 'gbtestdjango2024'
+MYSQL_PASSWORD = 'gowork2024'
+MYSQL_HOST = 'gbtestdjango2024.mysql.pythonanywhere-services.com'
+

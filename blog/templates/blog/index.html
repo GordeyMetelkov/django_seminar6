@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Посты</title>
+</head>
+<body>
+    <h1>Статьи автора</h1>
+    <ul>
+        {% for post in posts %}
+            {% if post.is_public %}
+                <li><a href="{% url read_post post.id %}}">{{ post.title }}</a></li>
+            {% else %}
+                <li>{{ post.title }}</li>
+            {% endif %}
+        {% endfor %}
+
+    </ul>
+</body>
+</html>

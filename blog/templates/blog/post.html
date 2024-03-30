@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ post_title }}</title>
+</head>
+<body>
+    <h1> {{ post_title }} от {{ post_pub }} </h1>
+    <h2> из категории {{ post_category }}</h2>
+    <p> {{ post_content }}</p>
+    <h1>Форма для добавления комментария</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Отправить">
+    </form>
+
+    <p> Автор поста: {{ post_author }}. У статьи {{ post_views_count }} просмотров.</p>
+    <p>
+        {% for comment in comments %}
+            <p>{{ comment.content }}</p>
+            <p>{{ comment.author.full_name }}</p>
+            <p>{{ comment.create_date }}</p>
+            <p>{{ comment.edite_date }}</p>
+            {% if comment.edite_date != comment.create_date %}
+                <p>Изменено</p>
+            {% endif %}
+        {% endfor %}
+    </p>
+</body>
+</html>
